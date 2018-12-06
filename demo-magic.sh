@@ -24,6 +24,9 @@ PROMPT_TIMEOUT=0
 SHOW_CMD_NUMS=false
 
 
+
+readonly yellow=$(tput bold; tput setaf 3)
+
 # handy color vars for pretty prompts
 BLACK="\033[0;30m"
 BLUE="\033[0;34m"
@@ -82,7 +85,7 @@ function p() {
   if $SHOW_CMD_NUMS; then
    printf "[$((++C_NUM))] $x"
   else
-   printf "$x"
+   printf "$yellow\$ $x"
   fi
 
   # wait for the user to press a key before typing the command
